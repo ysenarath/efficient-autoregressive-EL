@@ -6,14 +6,13 @@ import sys
 sys.path.append("../")
 ```
 
-
 ```python
 from argparse import ArgumentParser
 from pytorch_lightning import Trainer
-from src.model.efficient_el import EfficientEL
-from src.data.dataset_el import DatasetEL
+from entlink.model.efficient_el import EfficientEL
+from entlink.data.dataset_el import DatasetEL
 from IPython.display import Markdown
-from src.utils import get_markdown
+from entlink.utils import get_markdown
 ```
 
 

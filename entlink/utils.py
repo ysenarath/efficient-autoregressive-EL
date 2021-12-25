@@ -1,5 +1,5 @@
 import torch
-from pytorch_lightning.metrics import Metric
+from torchmetrics import Metric
 
 
 class MicroF1(Metric):
@@ -11,7 +11,6 @@ class MicroF1(Metric):
         self.add_state("rec_d", default=torch.tensor(0), dist_reduce_fx="sum")
 
     def update(self, p, g):
-
         self.n += len(g.intersection(p))
         self.prec_d += len(p)
         self.rec_d += len(g)
@@ -30,7 +29,6 @@ class MacroF1(Metric):
         self.add_state("d", default=torch.tensor(0), dist_reduce_fx="sum")
 
     def update(self, p, g):
-
         prec = len(g.intersection(p)) / len(p)
         rec = len(g.intersection(p)) / len(g)
 

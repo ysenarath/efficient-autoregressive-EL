@@ -1,7 +1,7 @@
 import torch
 
-from src.beam_search import beam_search
-from src.utils import label_smoothed_nll_loss
+from entlink.beam_search import beam_search
+from entlink.utils import label_smoothed_nll_loss
 
 
 class LSTM(torch.nn.Module):

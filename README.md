@@ -21,10 +21,11 @@ Here the [link](https://mega.nz/folder/l4RhnIxL#_oYvidq2qyDIw1sT-KeMQA) to **pre
 Please have a look into the [notebooks](https://github.com/nicola-decao/efficient-autoregressive-EL/tree/master/notebooks) folder to see hot to load our Entity Linking model, evaluate it on AIDA, and run inference on a test document.
 
 Here a minimal example that demonstrate how to use our model:
+
 ```python
-from src.model.efficient_el import EfficientEL
+from entlink.model.efficient_el import EfficientEL
 from IPython.display import Markdown
-from src.utils import 
+from entlink.utils import
 
 # loading the model on GPU and setting the the threshold to the
 # optimal value (based on AIDA validation set)
@@ -43,8 +44,8 @@ by an innings and 39 runs in two days to take over at the head of the county cha
 Markdown(
     get_markdown(
         [s],
-        [[(s[0], s[1], s[2][0][0]) for s in spans] 
-         for spans in  model.sample([s])]
+        [[(s[0], s[1], s[2][0][0]) for s in spans]
+         for spans in model.sample([s])]
     )[0]
 )
 ```

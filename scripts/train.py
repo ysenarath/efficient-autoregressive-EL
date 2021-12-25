@@ -7,7 +7,7 @@ from pytorch_lightning.callbacks import LearningRateMonitor, ModelCheckpoint
 from pytorch_lightning.loggers import TensorBoardLogger
 from pytorch_lightning.utilities.seed import seed_everything
 
-from src.model.efficient_el import EfficientEL
+from entlink.model.efficient_el import EfficientEL
 
 if __name__ == "__main__":
     parser = ArgumentParser()

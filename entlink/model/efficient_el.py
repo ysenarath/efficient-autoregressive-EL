@@ -1,9 +1,7 @@
-import csv
 import json
 from argparse import ArgumentParser
 from collections import defaultdict
 
-import pytorch_lightning as pl
 import torch
 from pytorch_lightning import LightningModule
 from torch.utils.data import DataLoader
@@ -14,10 +12,10 @@ from transformers import (
     get_linear_schedule_with_warmup,
 )
 
-from src.data.dataset_el import DatasetEL
-from src.model.entity_detection import EntityDetectionFactor
-from src.model.entity_linking import EntityLinkingLSTM
-from src.utils import (
+from entlink.data.dataset_el import DatasetEL
+from entlink.model.entity_detection import EntityDetectionFactor
+from entlink.model.entity_linking import EntityLinkingLSTM
+from entlink.utils import (
     MacroF1,
     MacroPrecision,
     MacroRecall,
